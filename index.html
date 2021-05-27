@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Service Worker</h1>
+<script>
+    // Check for browser support of service worker
+if ('serviceWorker' in navigator) {
+ navigator.serviceWorker.register('sw.js').then(function(registration) {
+   // Successful registration
+   console.warn('Hooray. Registration successful, scope is:', registration);
+ }).catch(function(err) {
+   // Failed registration, service worker won’t be installed
+   console.log('Whoops. Service worker registration failed, error:', err);
+ });
+}else{
+    console.warn("Service worker is not working")
+}
+</script>
+
+</body>
+</html>
